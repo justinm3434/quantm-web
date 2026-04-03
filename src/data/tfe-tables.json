@@ -1,0 +1,34 @@
+{
+  "tables": [
+    {
+      "version": "1.0",
+      "name": "CMOS",
+      "description": "Current CMOS at 7nm"
+    },
+    {
+      "version": "2.0",
+      "name": "Photonic",
+      "description": "Projected photonic tensor cores (2027-2029)"
+    },
+    {
+      "version": "3.0",
+      "name": "Quantum",
+      "description": "Projected fault-tolerant quantum at 1000+ logical qubits (2030+)"
+    }
+  ],
+  "operations": [
+    { "name": "INT1 XNOR + popcount (per bit)", "v1": 1, "v2": 0.3, "v3": 0.1 },
+    { "name": "INT4 multiply-accumulate", "v1": 32, "v2": 8, "v3": 2 },
+    { "name": "INT8 multiply-accumulate", "v1": 128, "v2": 24, "v3": 8 },
+    { "name": "FP16 multiply-accumulate", "v1": 512, "v2": 40, "v3": 16 },
+    { "name": "FP32 multiply-accumulate", "v1": 2048, "v2": 80, "v3": 32 },
+    { "name": "BF16 multiply-accumulate", "v1": 512, "v2": 40, "v3": 16 },
+    { "name": "Softmax (per element)", "v1": 8192, "v2": 1024, "v3": 256 },
+    { "name": "LayerNorm (per element)", "v1": 4096, "v2": 512, "v3": 128 },
+    { "name": "Memory read (per byte, SRAM)", "v1": 128, "v2": 64, "v3": 32 },
+    { "name": "Memory read (per byte, DRAM)", "v1": 4096, "v2": 512, "v3": 256 },
+    { "name": "Attention QK^T (per element)", "v1": "inherit", "v2": "inherit", "v3": "inherit" },
+    { "name": "Non-linear activation (GELU/SiLU)", "v1": 8192, "v2": 512, "v3": 128 },
+    { "name": "Binary activation (sign)", "v1": 1, "v2": 0.1, "v3": 0.05 }
+  ]
+}

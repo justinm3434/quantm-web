@@ -1,26 +1,290 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core palette — Link Ventures inspired */
+  --background: #0A0A0B;
+  --background-alt: #111113;
+  --foreground: #FFFFFF;
+  --foreground-muted: #A0A0A0;
+  --foreground-dim: #606068;
+  --accent: #A51C30;
+  --accent-hover: #C42240;
+  --accent-glow: rgba(165, 28, 48, 0.15);
+  --surface: #141418;
+  --surface-light: #F5F5F0;
+  --surface-border: #1E1E24;
+  --divider: #1E1E24;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-dim: var(--foreground-dim);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-glow: var(--accent-glow);
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-surface-border: var(--surface-border);
+  --color-divider: var(--divider);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Clean scrollbar removal */
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* ── Link Ventures-style easing ── */
+:root {
+  --ease-primary: cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+/* ── Premium link hover ── */
+.link-hover {
+  position: relative;
+  transition: color 0.4s var(--ease-primary);
+}
+.link-hover:hover {
+  color: var(--accent);
+}
+
+/* ── Scroll-triggered reveal animations ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-primary), transform 0.8s var(--ease-primary);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Hero grid background ── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(165, 28, 48, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(165, 28, 48, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(165, 28, 48, 0.08) 0%, transparent 70%);
+  top: 10%;
+  right: -10%;
+  pointer-events: none;
+}
+
+.hero-glow-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(165, 28, 48, 0.05) 0%, transparent 70%);
+  bottom: 20%;
+  left: -5%;
+  pointer-events: none;
+}
+
+/* ── Gradient text ── */
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--foreground-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, #D4374F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Number accent styling ── */
+.num-accent {
+  font-family: var(--font-mono), monospace;
+  color: var(--accent);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* ── Light section (inverted) ── */
+.section-light {
+  background: var(--surface-light);
+  color: #0A0A0B;
+}
+.section-light .text-muted-context {
+  color: #555555;
+}
+
+/* ── Accent glow card ── */
+.glow-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  transition: border-color 0.5s var(--ease-primary), box-shadow 0.5s var(--ease-primary);
+}
+.glow-card:hover {
+  border-color: rgba(165, 28, 48, 0.3);
+  box-shadow: 0 0 40px rgba(165, 28, 48, 0.06);
+}
+
+/* ── Stat number ── */
+.stat-number {
+  font-family: var(--font-mono), monospace;
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* ── Divider with glow ── */
+.hr-accent {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--divider) 20%, var(--divider) 80%, transparent);
+}
+
+/* ── Button styles (Link Ventures inspired) ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--accent);
+  color: white;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  transition: all 0.5s var(--ease-primary);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-primary);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(165, 28, 48, 0.2);
+}
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-ghost {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--foreground-muted);
+  transition: color 0.4s var(--ease-primary);
+  position: relative;
+}
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.4s var(--ease-primary);
+}
+.btn-ghost:hover {
+  color: var(--accent);
+}
+.btn-ghost:hover::after {
+  width: 100%;
+}
+
+/* ── Horizontal marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* ── Pulse dot ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Code block ── */
+.code-block {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+}
+
+/* ── Responsive font scaling (Link Ventures pattern) ── */
+@media (min-width: 2000px) {
+  body {
+    font-size: 0.85vw;
+  }
 }

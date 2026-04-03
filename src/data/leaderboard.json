@@ -1,0 +1,136 @@
+{
+  "entries": [
+    {
+      "rank": 1,
+      "name": "BitNet-GPT2 Binary (Baseline)",
+      "team": "QuanTM.ai",
+      "parameters": 124439808,
+      "dtype": "INT1",
+      "hellaswag": 31.6,
+      "valLoss": 3.11,
+      "tfePerToken": {
+        "v1": 41943040,
+        "v2": 12582912,
+        "v3": 4194304
+      },
+      "riftScores": {
+        "silicon": 4148.14,
+        "photonic": 4455.02,
+        "quantum": 4772.49,
+        "universal": 4451.52
+      },
+      "description": "Binary/ternary projection of GPT-2 architecture using 1-bit weights with sign activations. Theoretical radical-efficiency baseline demonstrating the upper bound of quantization-driven TFE reduction.",
+      "date": "2026-03-26"
+    },
+    {
+      "rank": 2,
+      "name": "DistilGPT-2 INT4 (Baseline)",
+      "team": "QuanTM.ai",
+      "parameters": 81912576,
+      "dtype": "INT4",
+      "hellaswag": 30.4,
+      "valLoss": 3.25,
+      "tfePerToken": {
+        "v1": 876609536,
+        "v2": 215941120,
+        "v3": 55574528
+      },
+      "riftScores": {
+        "silicon": 3399.21,
+        "photonic": 3651.01,
+        "quantum": 3927.80,
+        "universal": 3652.32
+      },
+      "description": "DistilGPT-2 (6-layer, 81.9M params) projected to INT4 quantization. Demonstrates combined architecture-level and quantization-level TFE reduction.",
+      "date": "2026-03-26"
+    },
+    {
+      "rank": 3,
+      "name": "GPT-2 INT4 (Baseline)",
+      "team": "QuanTM.ai",
+      "parameters": 124439808,
+      "dtype": "INT4",
+      "hellaswag": 31.6,
+      "valLoss": 3.11,
+      "tfePerToken": {
+        "v1": 1333156224,
+        "v2": 328307904,
+        "v3": 84501600
+      },
+      "riftScores": {
+        "silicon": 3463.00,
+        "photonic": 3710.53,
+        "quantum": 3986.58,
+        "universal": 3713.87
+      },
+      "description": "GPT-2 124M architecture projected to INT4 quantization. Aggressive quantization baseline.",
+      "date": "2026-03-26"
+    },
+    {
+      "rank": 4,
+      "name": "DistilGPT-2 FP16 (Baseline)",
+      "team": "QuanTM.ai",
+      "parameters": 81912576,
+      "dtype": "FP16",
+      "hellaswag": 30.4,
+      "valLoss": 3.25,
+      "tfePerToken": {
+        "v1": 13997490176,
+        "v2": 1088753664,
+        "v3": 438697984
+      },
+      "riftScores": {
+        "silicon": 2994.64,
+        "photonic": 3363.93,
+        "quantum": 3516.31,
+        "universal": 3287.08
+      },
+      "description": "DistilGPT-2 (6-layer, 81.9M params) at FP16 precision. Demonstrates architecture-level efficiency via distillation without aggressive quantization.",
+      "date": "2026-03-26"
+    },
+    {
+      "rank": 5,
+      "name": "GPT-2 INT8 (Baseline)",
+      "team": "QuanTM.ai",
+      "parameters": 124439808,
+      "dtype": "INT8",
+      "hellaswag": 31.6,
+      "valLoss": 3.11,
+      "tfePerToken": {
+        "v1": 5174283264,
+        "v2": 1013755392,
+        "v3": 350030592
+      },
+      "riftScores": {
+        "silicon": 3253.10,
+        "photonic": 3509.00,
+        "quantum": 3698.56,
+        "universal": 3482.24
+      },
+      "description": "GPT-2 124M architecture projected to INT8 quantization. Moderate efficiency baseline.",
+      "date": "2026-03-26"
+    },
+    {
+      "rank": 6,
+      "name": "GPT-2 FP32 (Baseline)",
+      "team": "QuanTM.ai",
+      "parameters": 124439808,
+      "dtype": "FP32",
+      "hellaswag": 31.6,
+      "valLoss": 3.11,
+      "tfePerToken": {
+        "v1": 79281245184,
+        "v2": 3175208448,
+        "v3": 1276367616
+      },
+      "riftScores": {
+        "silicon": 2899.64,
+        "photonic": 3326.00,
+        "quantum": 3470.59,
+        "universal": 3224.41
+      },
+      "description": "Unmodified GPT-2 124M from HuggingFace. FP32 weights. Worst-case baseline — every submission should beat this.",
+      "date": "2026-03-26"
+    }
+  ]
+}

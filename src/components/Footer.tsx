@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/competition", label: "Competition" },
@@ -15,10 +16,19 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">
           {/* Brand */}
           <div>
-            <div className="text-xl tracking-[0.15em] font-light uppercase mb-4">
-              <span className="text-accent font-normal">Quan</span>
-              <span className="text-foreground">TM</span>
-              <span className="text-foreground-dim">.ai</span>
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/images/quantm-logo.jpg"
+                alt="QuanTM logo"
+                width={40}
+                height={40}
+                className="h-10 w-10 object-contain rounded-sm"
+              />
+              <div className="text-xl tracking-[0.15em] font-light uppercase">
+                <span className="text-accent font-normal">Quan</span>
+                <span className="text-foreground">TM</span>
+                <span className="text-foreground-dim">.ai</span>
+              </div>
             </div>
             <p className="text-foreground-dim text-sm leading-relaxed max-w-xs">
               The race for speed is over.<br />

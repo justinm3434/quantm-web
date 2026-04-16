@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -34,12 +35,26 @@ export default function Nav() {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 group">
-          <span className="text-xl tracking-[0.15em] font-light uppercase">
-            <span className="text-accent font-normal transition-colors duration-400">Quan</span>
-            <span className="text-foreground">TM</span>
+        <Link
+          href="/"
+          className="flex items-center gap-3 group"
+          aria-label="QuanTM.ai home"
+        >
+          <Image
+            src="/images/quantm-logo.jpg"
+            alt="QuanTM logo"
+            width={36}
+            height={36}
+            priority
+            className="h-9 w-9 object-contain rounded-sm"
+          />
+          <span className="text-xl tracking-[0.15em] font-light uppercase flex items-baseline gap-1">
+            <span>
+              <span className="text-accent font-normal transition-colors duration-400">Quan</span>
+              <span className="text-foreground">TM</span>
+            </span>
+            <span className="text-foreground-dim text-sm font-light">.ai</span>
           </span>
-          <span className="text-foreground-dim text-sm font-light">.ai</span>
         </Link>
 
         {/* Desktop links */}

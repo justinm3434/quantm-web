@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
@@ -10,11 +11,21 @@ export default function Home() {
         <div className="hero-glow-2" />
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-32 w-full relative z-10">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-10">
-              <span className="inline-block w-2 h-2 rounded-full bg-accent pulse-dot" />
-              <p className="text-[11px] tracking-[0.3em] uppercase text-accent">
-                The Blundin Space RIFT Competition
-              </p>
+            <div className="mb-10">
+              <Image
+                src="/images/quantm-logo.jpg"
+                alt="QuanTM logo"
+                width={120}
+                height={120}
+                priority
+                className="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md mb-8"
+              />
+              <div className="flex items-center gap-3">
+                <span className="inline-block w-2 h-2 rounded-full bg-accent pulse-dot" />
+                <p className="text-[11px] tracking-[0.3em] uppercase text-accent">
+                  The Blundin Space RIFT Competition
+                </p>
+              </div>
             </div>
             <h1 className="text-[clamp(2.8rem,6.5vw,6rem)] font-light leading-[1.02] tracking-[-0.03em] mb-8">
               Training happens once.

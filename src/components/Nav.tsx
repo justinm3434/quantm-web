@@ -48,7 +48,7 @@ export default function Nav() {
             priority
             className="h-8 md:h-9 w-auto object-contain"
           />
-          <span className="text-foreground-dim text-sm font-light tracking-[0.05em] leading-none mb-[6px] md:mb-[7px]">.ai</span>
+          <span className="text-foreground-dim text-sm font-light tracking-[0.05em] leading-none mb-[10px] md:mb-[11px]">.ai</span>
         </Link>
 
         {/* Desktop links */}

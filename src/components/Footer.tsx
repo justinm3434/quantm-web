@@ -24,7 +24,7 @@ export default function Footer() {
                 height={312}
                 className="h-10 w-auto object-contain"
               />
-              <span className="text-foreground-dim text-base font-light leading-none mb-[8px]">.ai</span>
+              <span className="text-foreground-dim text-base font-light leading-none mb-[13px]">.ai</span>
             </div>
             <p className="text-foreground-dim text-sm leading-relaxed max-w-xs">
               The race for speed is over.<br />

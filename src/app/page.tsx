@@ -13,12 +13,12 @@ export default function Home() {
           <div className="max-w-3xl">
             <div className="mb-10">
               <Image
-                src="/images/quantm-logo.jpg"
-                alt="QuanTM logo"
-                width={120}
-                height={120}
+                src="/images/quantm-logo.png"
+                alt="QuanTM"
+                width={800}
+                height={312}
                 priority
-                className="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md mb-8"
+                className="h-16 md:h-24 w-auto object-contain mb-10"
               />
               <div className="flex items-center gap-3">
                 <span className="inline-block w-2 h-2 rounded-full bg-accent pulse-dot" />

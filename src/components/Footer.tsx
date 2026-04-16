@@ -16,19 +16,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-baseline gap-1.5 mb-5">
               <Image
-                src="/images/quantm-logo.jpg"
-                alt="QuanTM logo"
-                width={40}
-                height={40}
-                className="h-10 w-10 object-contain rounded-sm"
+                src="/images/quantm-logo.png"
+                alt="QuanTM"
+                width={800}
+                height={312}
+                className="h-10 w-auto object-contain"
               />
-              <div className="text-xl tracking-[0.15em] font-light uppercase">
-                <span className="text-accent font-normal">Quan</span>
-                <span className="text-foreground">TM</span>
-                <span className="text-foreground-dim">.ai</span>
-              </div>
+              <span className="text-foreground-dim text-base font-light">.ai</span>
             </div>
             <p className="text-foreground-dim text-sm leading-relaxed max-w-xs">
               The race for speed is over.<br />

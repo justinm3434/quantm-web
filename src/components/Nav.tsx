@@ -37,24 +37,18 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 group"
+          className="flex items-baseline gap-1.5 group"
           aria-label="QuanTM.ai home"
         >
           <Image
-            src="/images/quantm-logo.jpg"
-            alt="QuanTM logo"
-            width={36}
-            height={36}
+            src="/images/quantm-logo.png"
+            alt="QuanTM"
+            width={800}
+            height={312}
             priority
-            className="h-9 w-9 object-contain rounded-sm"
+            className="h-8 md:h-9 w-auto object-contain"
           />
-          <span className="text-xl tracking-[0.15em] font-light uppercase flex items-baseline gap-1">
-            <span>
-              <span className="text-accent font-normal transition-colors duration-400">Quan</span>
-              <span className="text-foreground">TM</span>
-            </span>
-            <span className="text-foreground-dim text-sm font-light">.ai</span>
-          </span>
+          <span className="text-foreground-dim text-sm font-light tracking-[0.05em]">.ai</span>
         </Link>
 
         {/* Desktop links */}

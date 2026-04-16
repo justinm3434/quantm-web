@@ -24,10 +24,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/images/quantm-logo.jpg", type: "image/jpeg" },
+      { url: "/images/quantm-logo.png", type: "image/png" },
     ],
-    apple: "/apple-icon.jpg",
-    shortcut: "/images/quantm-logo.jpg",
+    apple: "/apple-icon.png",
+    shortcut: "/images/quantm-logo.png",
   },
   openGraph: {
     title: "QuanTM.ai — The Race for Space",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     siteName: "QuanTM.ai",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 2048,
-        height: 1536,
+        url: "/og-image.png",
+        width: 800,
+        height: 312,
         alt: "QuanTM.ai — Reduced Inference Fast Transformer",
       },
     ],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "QuanTM.ai — The Race for Space",
     description:
       "The Blundin Space RIFT competition. Build for space. Win everywhere.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 

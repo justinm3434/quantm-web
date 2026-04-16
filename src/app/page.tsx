@@ -18,7 +18,7 @@ export default function Home() {
                 width={800}
                 height={312}
                 priority
-                className="h-16 md:h-24 w-auto object-contain mb-10"
+                className="h-28 md:h-44 lg:h-52 w-auto object-contain mb-12"
               />
               <div className="flex items-center gap-3">
                 <span className="inline-block w-2 h-2 rounded-full bg-accent pulse-dot" />
